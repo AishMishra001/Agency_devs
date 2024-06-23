@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom"; // Assuming you are using React Router for navigation
-// import { img } from "react-image-and-background-image-fade"; // Assuming you are using a similar img component
+import { Link } from "react-router-dom";
 
 const transition = {
   type: "spring",
@@ -22,47 +21,39 @@ export const MenuItem = ({ setActive, active, item, children }) => {
       >
         {item}
       </motion.p>
-      {active !== null && (
+      {active === item && (
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={transition}
         >
-          {active === item && (
-            <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
-              <motion.div
-                transition={transition}
-                layoutId="active" // layoutId ensures smooth animation
-                className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
-              >
-                <motion.div
-                  layout // layout ensures smooth animation
-                  className="w-max h-full p-4"
-                >
-                  {children}
-                </motion.div>
+          <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
+            <motion.div
+              transition={transition}
+              layoutId="active"
+              className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+            >
+              <motion.div layout className="w-max h-full p-4">
+                {children}
               </motion.div>
-            </div>
-          )}
+            </motion.div>
+          </div>
         </motion.div>
       )}
     </div>
   );
 };
 
-
 export const Menu = ({ setActive, children }) => {
   return (
     <nav
-      onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full boder border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6"
+      onMouseLeave={() => setActive(null)}
+      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6"
     >
       {children}
     </nav>
   );
 };
-
-
 
 export const ProductItem = ({ title, description, href, src }) => {
   return (
@@ -86,11 +77,12 @@ export const ProductItem = ({ title, description, href, src }) => {
   );
 };
 
-
-
 export const HoveredLink = ({ children, ...rest }) => {
   return (
-    <Link {...rest} className="text-neutral-700 dark:text-neutral-200 hover:text-black">
+    <Link
+      {...rest}
+      className="text-neutral-700 dark:text-neutral-200 hover:text-black"
+    >
       {children}
     </Link>
   );

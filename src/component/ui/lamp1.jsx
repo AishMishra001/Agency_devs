@@ -5,7 +5,7 @@ import { cn } from "../../utils/cn.js";
 
 export function LampDemo1() {
   return (
-    <LampContainer>
+    <LampContainer1>
       <motion.h1
         initial={{ opacity: 0.5, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -18,11 +18,11 @@ export function LampDemo1() {
       >
         Build lamps <br /> the right way
       </motion.h1>
-    </LampContainer>
+    </LampContainer1>
   );
 }
 
-export const LampContainer = ({ children, className }) => {
+export const LampContainer1 = ({ children, className }) => {
   return (
     <div
       className={cn(

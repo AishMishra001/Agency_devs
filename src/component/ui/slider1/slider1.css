@@ -1,0 +1,42 @@
+.hexagon-slider {
+  position: relative;
+  width: 400px;
+  height: 400px; /* Increased height to better fit hexagons */
+  margin: auto;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hexagon-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.hexagon {
+  width: 250px; /* Adjust size of hexagon faces */
+  height: 250px; /* Adjust size of hexagon faces */
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+.face-0 { transform: rotateY(0deg) translateZ(400px); }
+.face-1 { transform: rotateY(25.71deg) translateZ(400px); }
+.face-2 { transform: rotateY(51.42deg) translateZ(400px); }
+.face-3 { transform: rotateY(77.13deg) translateZ(400px); }
+.face-4 { transform: rotateY(102.84deg) translateZ(400px); }
+.face-5 { transform: rotateY(128.55deg) translateZ(400px); }
+.face-6 { transform: rotateY(154.26deg) translateZ(400px); }
+.face-7 { transform: rotateY(179.97deg) translateZ(400px); }
+.face-8 { transform: rotateY(205.68deg) translateZ(400px); }
+.face-9 { transform: rotateY(231.39deg) translateZ(400px); }
+.face-10 { transform: rotateY(257.1deg) translateZ(400px); }
+.face-11 { transform: rotateY(282.81deg) translateZ(400px); }
+.face-12 { transform: rotateY(308.52deg) translateZ(400px); }
+.face-13 { transform: rotateY(334.23deg) translateZ(400px); }
