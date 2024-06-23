@@ -4,6 +4,9 @@ import { LampContainer } from './ui/lamp1';
 import { motion } from 'framer-motion';
 import { BentoGridThirdDemo } from './BentoGridService';
 import SwiperComponent from './ui/Swiper';
+import Slider from './ui/slider/slider';
+import ImageSlider from './ui/slider/slider';
+import HexagonSlider from './ui/slider/slider';
 
 function Services() {
   return (
@@ -23,9 +26,11 @@ function Services() {
         <h1 className="text-transparent bg-gradient-to-t from-gray-700 to-white bg-clip-text cinzel-bold-header">
   Product Design
 </h1>
-
-          <SwiperComponent />
+            <br></br>
+            <br></br>
+             {/* <SwiperComponent></SwiperComponent> */}
         </motion.div>
+          <HexagonSlider></HexagonSlider>
       </LampContainer>
     </div>
   );
